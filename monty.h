@@ -68,6 +68,7 @@ void top_queue(stack_t *coin, unsigned int num);
 void monty_stack(stack_t **head, unsigned int counter);
 int perform_task(stack_t **top, FILE *montyfile, unsigned int count,
 char *line_content);
+void pop_item(stack_t **top, unsigned int item);
 
 
 
@@ -83,7 +84,6 @@ char  *clean_line(char *content);
 
 
 
-void monty_pop(stack_t **head, unsigned int counter);
 void monty_swap(stack_t **head, unsigned int counter);
 void monty_add(stack_t **head, unsigned int counter);
 void monty_nop(stack_t **head, unsigned int counter);
