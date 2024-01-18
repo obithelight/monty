@@ -68,6 +68,7 @@ void top_queue(stack_t *coin, unsigned int num);
 void monty_stack(stack_t **head, unsigned int counter);
 int perform_task(stack_t **top, FILE *montyfile, unsigned int count,
 char *line_content);
+void swap_item(stack_t **top, unsigned int item);
 void pop_item(stack_t **top, unsigned int item);
 
 
