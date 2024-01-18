@@ -14,7 +14,10 @@ void pop_item(stack_t **top, unsigned int item)
 
 	if (*top == NULL)
 	{
-		perror("L<line_number>: can't pop an empty stack\n");
+		fprintf(stderr, "L%d: can't pop an empty stack\n", item);
+		fclose(coach.link);
+		free(coach.line_info);
+		freelist(*top);
 		exit(EXIT_FAILURE);
 	}
 	else
