@@ -7,27 +7,36 @@
  */
 void swap_item(stack_t **top, unsigned int item)
 {
-	stack_t *ptr;
+	stack_t *temp, *ptr;
 
-	if ((!*top) || (*top)->next == NULL)
+	if ((*top) == NULL || (*top)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", item);
-		fclose(coach.link);
-		free(coach.line_info);
 		freelist(*top);
 		exit(EXIT_FAILURE);
 	}
-	ptr = *top;
-	ptr->prev = ptr->next;
+	temp = *top;
+	/*ptr->prev = ptr->next;*/
 
-	if ((*top)->next->next == NULL)
-		ptr->next = NULL;
-	else
-	{
-		ptr->next = ptr->next->next;
-		ptr->next->prev = *top;
-	}
-	*top = ptr->prev;
-	(*top)->prev = NULL;
-	(*top)->next = ptr;
+	/**
+	*if ((*top)->next->next == NULL)
+	*	ptr->next = NULL;
+	*else
+	*{
+	*	ptr->next = ptr->next->next;
+	*	ptr->next->prev = *top;
+	*}
+	**top = ptr->prev;
+	*(*top)->prev = NULL;
+	*(*top)->next = ptr;
+	*/
+
+	temp = *top;
+	ptr = temp->next;
+	temp = temp->next;
+	ptr = *top;
+	*top = temp;
+
+	free(ptr);
+	free(temp);
 }
