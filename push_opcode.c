@@ -7,8 +7,7 @@
  */
 void monty_push_opcode(stack_t **head_node, unsigned int line_no)
 {
-	int num, loop, checkflag = 0;
-	loop = 0;
+	int num, loop = 0, checkflag = 0;
 
 	if (coach.argv)
 	{

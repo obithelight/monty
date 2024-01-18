@@ -1,0 +1,46 @@
+#include "monty.h"
+/**
+* perform_task - carries out the opcode function
+* @top: head linked list - stack
+* @count: line_counter
+* @montyfile: poiner to monty file
+* @line_content: line content
+* Return: 1
+*/
+int perform_task(stack_t **top, FILE *montyfile, unsigned int count,
+char *line_content)
+{
+	unsigned int start;
+	char *temp;
+
+	instruction_t mylist[] = {
+					{"push", monty_push_opcode}, {"pall", monty_pall_opcode},
+					{"pint", monty_pint_opcode}, {"stack", monty_stack}, {"queue", monty_queue},
+					{"pop", f_pop}, {"swap", f_swap}, {"add", f_add}, {"nop", f_nop},
+					{"sub", f_sub}, {"div", f_div}, {"mul", f_mul},
+					{"mod", f_mod}, {"pchar", f_pchar}, {"pstr", f_pstr},
+					{"rotl", f_rotl}, {"rotr", f_rotr}, {NULL, NULL}
+				};
+	start = 0;
+
+	temp = strtok(line_content, " \n\t");
+	if (temp[0] == '#' && temp)
+		return (0);
+	coach.argv = strtok(NULL, " \n\t");
+	while (mylist[start].opcode && temp)
+	{
+		if (strcmp(temp, mylist[start].opcode) == 0)
+		{	mylist[start].f(top, count);
+			return (0);
+		}
+		start++;
+	}
+	if (temp && mylist[start].opcode == NULL)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", count, temp);
+		fclose(montyfile);
+		free(line_content);
+		freelist(*top);
+		exit(EXIT_FAILURE); }
+	return (1);
+}
