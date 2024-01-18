@@ -51,7 +51,7 @@ typedef struct instruction_s
 typedef struct coach_s
 {
 	int status;
-	FILE *monty_ptr;
+	FILE *link;
 	char *line_info;
 	char *argv;
 }  coach_t;
