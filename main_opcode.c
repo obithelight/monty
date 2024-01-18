@@ -1,5 +1,5 @@
 #include "monty.h"
-#include <stdio.h>
+
 coach_t coach = {0, NULL, NULL, NULL};
 
 /**
@@ -12,7 +12,7 @@ int main(int a_count, char **a_vector)
 {
 	char *info = NULL;
 	FILE *next = NULL;
-	/*size_t length = 0;*/
+	size_t length = 0;
 	ssize_t scanline = 1;
 	unsigned int rollcall;
 	stack_t *list = NULL;
@@ -33,7 +33,7 @@ int main(int a_count, char **a_vector)
 
 	for (rollcall = 0; scanline > 0; rollcall++)/*while (scanline > 0)*/
 	{
-		/*scanline = getline(&info, &length, next);*/
+		scanline = getline(&info, &length, next);
 		coach.line_info = info;
 		/*if (scanline > 0)
 			execute(info, &list, rollcall, next);*/
