@@ -1,13 +1,12 @@
 #include "monty.h"
 
+coach_t coach = {0, NULL, NULL, NULL};
 /**
  * main - entry point of the program
  * @a_count: argument count/number of arguments
  * @a_vector: argument vector/monty file location
  * Return: 0
  */
-coach_t coach = {0, NULL, NULL, NULL};
-
 int main(int a_count, char **a_vector)
 {
 	char *info = NULL;
