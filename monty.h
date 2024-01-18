@@ -66,7 +66,8 @@ void add_node_to_queue(stack_t **front, int data);
 void freelist(stack_t *head);
 void top_queue(stack_t *coin, unsigned int num);
 void monty_stack(stack_t **head, unsigned int counter);
-int perform_task(stack_t **top, FILE *montyfile, unsigned int count, char *line_content);
+int perform_task(stack_t **top, FILE *montyfile, unsigned int count,
+char *line_content);
 
 
 

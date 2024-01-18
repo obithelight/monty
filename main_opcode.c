@@ -1,7 +1,5 @@
 #include "monty.h"
 
-coach_t coach = {0, NULL, NULL, NULL};
-
 /**
  * main - entry point of the program
  * @a_count: argument count/number of arguments
@@ -10,11 +8,12 @@ coach_t coach = {0, NULL, NULL, NULL};
  */
 int main(int a_count, char **a_vector)
 {
+	static coach_t coach = {0, NULL, NULL, NULL};
 	char *info = NULL;
-	FILE *next = NULL;
+	const FILE *next = NULL;
 	size_t length = 0;
-	ssize_t scanline = 1;
-	unsigned int rollcall;
+	ssize_t scanline;
+	unsigned int x;
 	stack_t *list = NULL;
 
 	if (a_count < 2)
@@ -31,12 +30,11 @@ int main(int a_count, char **a_vector)
 		exit(EXIT_FAILURE);
 	}
 
-	for (rollcall = 0; scanline > 0; rollcall++)/*while (scanline > 0)*/
+	for (x = 0; (scanline = getline(&info, &length, next)) != -1; x++)
+	/*while (scanline > 0)*/
 	{
-		scanline = getline(&info, &length, next);
 		coach.line_info = info;
-		/*if (scanline > 0)
-			execute(info, &list, rollcall, next);*/
+			/* execute(info, &list, rollcall, next); */
 		free(info);
 	}
 	freelist(list);
