@@ -10,7 +10,7 @@ coach_t coach = {0, NULL, NULL, NULL};
 int main(int a_count, char **a_vector)
 {
 	char *info = NULL;
-	const FILE *next = NULL;
+	FILE *next = NULL;
 	size_t length = 0;
 	ssize_t scanline;
 	unsigned int x;
@@ -34,7 +34,7 @@ int main(int a_count, char **a_vector)
 	/*while (scanline > 0)*/
 	{
 		coach.line_info = info;
-			/* execute(info, &list, rollcall, next); */
+		/* execute(info, &list, x, next); */
 		free(info);
 	}
 	freelist(list);
