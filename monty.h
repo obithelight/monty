@@ -60,8 +60,11 @@ extern coach_t coach;
 void monty_push_opcode(stack_t **head_node, unsigned int line_no);
 void monty_pall_opcode(stack_t **head_node, unsigned int line_no);
 void monty_pint_opcode(stack_t **head_node, unsigned int line_no);
-void add_node_to_stack(stack_t **head, int number);
-void add_node_to_queue(stack_t **head, int number);
+void add_node_to_stack(stack_t *front, int data);
+void add_node_to_queue(stack_t *head, int number);
+void freelist(stack_t **head);
+void top_queue(stack_t *coin, unsigned int num);
+void monty_stack(stack_t **head, unsigned int counter);
 
 
 
@@ -77,7 +80,6 @@ char  *clean_line(char *content);
 
 
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void free_stack(stack_t *head);
 
 
 void monty_pop(stack_t **head, unsigned int counter);
@@ -98,8 +100,6 @@ void monty_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 
 
 
-void monty_queue(stack_t **head, unsigned int counter);
-void monty_stack(stack_t **head, unsigned int counter);
 
 
 #endif /*MONTY_H*/
