@@ -6,9 +6,10 @@
  * @a_vector: argument vector/monty file location
  * Return: 0
  */
+coach_t coach = {0, NULL, NULL, NULL};
+
 int main(int a_count, char **a_vector)
 {
-	static coach_t coach = {0, NULL, NULL, NULL};
 	char *info = NULL;
 	const FILE *next = NULL;
 	size_t length = 0;
