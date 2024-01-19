@@ -60,17 +60,17 @@ extern coach_t coach;
 
 void monty_push_opcode(stack_t **head_node, unsigned int line_no);
 void monty_pall_opcode(stack_t **head_node, unsigned int line_no);
-void monty_pint_opcode(stack_t *front, unsigned int line_no);
+void monty_pint_opcode(stack_t **front, unsigned int line_no);
 void add_node_to_stack(stack_t **front, int data);
 void add_node_to_queue(stack_t **front, int data);
 void freelist(stack_t *head);
-void top_queue(stack_t *coin, unsigned int num);
-void monty_stack(stack_t **head, unsigned int counter);
-int perform_task(stack_t **top, FILE *montyfile, unsigned int count,
+void top_queue(stack_t **coin, unsigned int num);
+void top_stack(stack_t **coin, unsigned int num);
+int exectask(stack_t **top, FILE *montyfile, unsigned int count,
 char *line_content);
 void swap_item(stack_t **top, unsigned int item);
+void add_item(stack_t **top, unsigned int item);
 void pop_item(stack_t **top, unsigned int item);
-
 
 
 
@@ -85,19 +85,19 @@ char  *clean_line(char *content);
 
 
 
-void monty_swap(stack_t **head, unsigned int counter);
-void monty_add(stack_t **head, unsigned int counter);
-void monty_nop(stack_t **head, unsigned int counter);
-void monty_sub(stack_t **head, unsigned int counter);
-void monty_div(stack_t **head, unsigned int counter);
-void monty_mul(stack_t **head, unsigned int counter);
-void monty_mod(stack_t **head, unsigned int counter);
+void swap_item(stack_t **head, unsigned int counter);
+void add_item(stack_t **head, unsigned int counter);
+void nop_item(stack_t **head, unsigned int counter);
+void sub_item(stack_t **head, unsigned int counter);
+void div_item(stack_t **head, unsigned int counter);
+void mul_item(stack_t **head, unsigned int counter);
+void mod_item(stack_t **head, unsigned int counter);
 
 
-void monty_pchar(stack_t **head, unsigned int counter);
-void monty_pstr(stack_t **head, unsigned int counter);
-void monty_rotl(stack_t **head, unsigned int counter);
-void monty_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void pchar_item(stack_t **head, unsigned int counter);
+void pstr_item(stack_t **head, unsigned int counter);
+void rotl_item(stack_t **head, unsigned int counter);
+void rotr_item(stack_t **head, __attribute__((unused)) unsigned int counter);
 
 
 

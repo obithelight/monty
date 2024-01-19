@@ -39,7 +39,7 @@ void add_node_to_queue(stack_t **front, int data)
  * @coin: head pointer
  * @num: line_number
  */
-void top_queue(stack_t *coin, unsigned int num)
+void top_queue(stack_t **coin, unsigned int num)
 {
 	(void)coin;
 	(void)num;

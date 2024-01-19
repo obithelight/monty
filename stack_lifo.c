@@ -30,7 +30,7 @@ void add_node_to_stack(stack_t **front, int data)
  * @coin: head pointer
  * @num: line_number
  */
-void top_stack(stack_t *coin, unsigned int num)
+void top_stack(stack_t **coin, unsigned int num)
 {
 	(void)coin;
 	(void)num;
