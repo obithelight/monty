@@ -71,6 +71,7 @@ char *line_content);
 void swap_item(stack_t **top, unsigned int item);
 void add_item(stack_t **top, unsigned int item);
 void pop_item(stack_t **top, unsigned int item);
+void rotr_item(stack_t **top, __attribute__((unused)) unsigned int counter);
 
 
 
@@ -84,9 +85,6 @@ char  *clean_line(char *content);
 
 
 
-
-void swap_item(stack_t **head, unsigned int counter);
-void add_item(stack_t **head, unsigned int counter);
 void nop_item(stack_t **head, unsigned int counter);
 void sub_item(stack_t **head, unsigned int counter);
 void div_item(stack_t **head, unsigned int counter);
@@ -94,10 +92,9 @@ void mul_item(stack_t **head, unsigned int counter);
 void mod_item(stack_t **head, unsigned int counter);
 
 
-void pchar_item(stack_t **head, unsigned int counter);
-void pstr_item(stack_t **head, unsigned int counter);
-void rotl_item(stack_t **head, unsigned int counter);
-void rotr_item(stack_t **head, __attribute__((unused)) unsigned int counter);
+void pchar_item(stack_t **top, unsigned int counter);
+void pstr_item(stack_t **top, unsigned int counter);
+void rotl_item(stack_t **top, unsigned int counter);
 
 
 

@@ -18,8 +18,8 @@ char *line_content)
 					{"pop", pop_item}, {"swap", swap_item}, {"add", add_item},
 				/*	{"nop", nop_item}, {"sub", sub_item}, {"div", div_item}, */
 				/*	{"mul", mul_item}, {"mod", mod_item}, {"pchar", pchar_item}, */
-				/*	{"pstr", pstr_item}, {"rotl", rotl_item}, {"rotr", rotr_item}, */
-					{NULL, NULL}
+				/*	{"pstr", pstr_item}, {"rotl", rotl_item},*/
+					{"rotr", rotr_item}, {NULL, NULL}
 				};
 	start = 0;
 
